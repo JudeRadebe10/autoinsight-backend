@@ -4,7 +4,7 @@ __pycache__/
 **/*.pyc
 
 # Local SQLite databases
-*.sqlite
+
 *.db
 
 # macOS files
