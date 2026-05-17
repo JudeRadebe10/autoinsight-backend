@@ -1,0 +1,11 @@
+# Python virtual environment
+venv/
+__pycache__/
+**/*.pyc
+
+# Local SQLite databases
+*.sqlite
+*.db
+
+# macOS files
+.DS_Store
