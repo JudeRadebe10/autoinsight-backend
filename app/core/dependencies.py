@@ -37,7 +37,7 @@ async def get_current_user(
             selectinload(User.user_roles).selectinload(UserRole.role),
             selectinload(User.settings)
         )
-        .where(User.id == uuid.UUID(user_id))
+        .where(User.id == user_id)
     )
     user = result.scalar_one_or_none()
     if not user:
