@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: autoinsight-backend-production
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: autoinsight-postgres
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
+databases:
+  - name: autoinsight-postgres
+    databaseName: autoinsight_db
+    user: admin
